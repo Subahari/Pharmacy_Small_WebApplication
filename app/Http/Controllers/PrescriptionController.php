@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Prescription;
 use Illuminate\Http\Request;
+use App\Models\Users;
 
 class PrescriptionController extends Controller
 {
@@ -19,6 +20,12 @@ class PrescriptionController extends Controller
     
         return view('prescriptions.index',compact('prescriptions'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
+
+            // $host = DB::table('prescriptions')->select('user_id')->where('id', $id)->get();
+            // $id = Auth::id();
+        //   $user_id= 'user_id' => auth()->id();
+
+
     }
 
     /**
@@ -42,12 +49,13 @@ class PrescriptionController extends Controller
     {
         //
         $request->validate([
-            'drug' => 'required',
+           // 'drug' => 'required',
             'note' => 'required',
             'deliveryAddress' => 'required',
             'deliveryTime' =>'required',
-            'quantity'=>'required',
+            //'quantity'=>'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+           'user_id' => 'required'
         ]);
   
         $input = $request->all();
@@ -101,12 +109,13 @@ class PrescriptionController extends Controller
     {
         //
         $request->validate([
-            'drug' => 'required',
+            //'drug' => 'required',
             'note' => 'required',
             'deliveryAddress' => 'required',
             'deliveryTime' =>'required',
-            'quantity'=>'required',
+            //'quantity'=>'required',
             //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            //'user_id' => auth()->id() 
         ]);
   
         $input = $request->all();

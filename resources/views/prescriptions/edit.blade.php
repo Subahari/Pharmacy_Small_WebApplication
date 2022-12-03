@@ -1,10 +1,10 @@
 @extends('prescriptions.layout')
      
 @section('content')
-    <div class="row">
+    <div class="row card-header">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Prescription</h2>
+                <h2 >Edit Prescription</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('prescriptions.index') }}"> Back</a>
@@ -27,13 +27,13 @@
         @csrf
         @method('PUT')
      
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+         <div class="row mt-3">
+            <!-- <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Drug:</strong>
                     <input type="text" name="drug" value="{{ $prescription->drug }}" class="form-control" placeholder="Name">
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -49,14 +49,18 @@
             </div>
         </div>
 
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
+<div class="row">
+<div class="col-xs-6 col-sm-6 col-md-6">
                 <div class="form-group">
                     <strong>Image:</strong>
                     <input type="file" name="image" class="form-control" placeholder="image">
-                    <img src="/images/{{ $prescription->image }}" width="300px">
-                </div>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-md-6"> 
+                        <img src="/images/{{ $prescription->image }}" width="300px">
+             </div>
             </div>
+</div>
+       
 
             <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -66,15 +70,15 @@
         </div>
            
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <!-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Quantity:</strong>
                 <input type="number" name="quantity" class="form-control" placeholder="quantity" value="{{ $prescription->quantity }}">
             </div>
-        </div>
+        </div> -->
 
          
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center my-5">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

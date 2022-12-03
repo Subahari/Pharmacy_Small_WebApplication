@@ -1,13 +1,13 @@
 @extends('prescriptions.layout')
   
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
+<div class="row ">
+    <div class="col-lg-12 margin-tb card-header">
         <div class="pull-left">
-            <h2>Add New Product</h2>
+            <h2>Add New Prescriptions</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('prescriptions.index') }}"> Back</a>
+            <a class="btn btn-info" href="{{ route('prescriptions.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -22,17 +22,19 @@
         </ul>
     </div>
 @endif
-     
+     <div class="row mt-5">
+
+     </div>
 <form action="{{ route('prescriptions.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     
      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Drug:</strong>
                 <input type="text" name="drug" class="form-control" placeholder="Drug">
             </div>
-        </div>
+        </div> -->
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -40,6 +42,9 @@
                 <input type="text" name="deliveryAddress" class="form-control" placeholder="deliveryAddress">
             </div>
         </div>
+
+     
+       <input type="text" name="user_id" class="form-control" value="{{ Auth::user()->id  }}" hidden>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
@@ -62,14 +67,14 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <!-- <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Quantity:</strong>
                 <input type="number" name="quantity" class="form-control" placeholder="quantity">
             </div>
-        </div>
+        </div> -->
      
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 text-center my-5">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>

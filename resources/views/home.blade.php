@@ -17,7 +17,7 @@
                     You are a User.
                 </div>
                 <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('prescriptions.create') }}"> Create New Prescription</a>
+                <a class="btn btn-info" href="{{ route('prescriptions.create') }}"> Create New Prescription</a>
             </div>
 
             </div>

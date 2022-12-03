@@ -16,12 +16,16 @@ return new class extends Migration
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('drug');
+            $table->integer('user_id')->unsigned();
+            //$table->string('drug');
             $table->text('note');
             $table->string('image');
             $table->string('deliveryAddress');
             $table->string('deliveryTime');
-            $table->Integer('quantity');
+           // $table->Integer('quantity');
+            
+           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 

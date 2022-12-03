@@ -51,9 +51,9 @@ Route::middleware(['auth', 'user-access:Pharmacy'])->group(function () {
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
---------------------------------------------*/
-Route::get('registration', [RegisterController::class, 'registration'])->name('register');
-Route::post('post-registration', [RegisterController::class, 'postRegistration'])->name('register'); 
+// --------------------------------------------*/
+// Route::get('registration', [RegisterController::class, 'registration'])->name('register');
+// Route::post('post-registration', [RegisterController::class, 'postRegistration'])->name('register'); 
 // Route::resource('prescriptions', PrescriptionController::class);
 
  

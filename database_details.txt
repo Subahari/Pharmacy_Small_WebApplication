@@ -1,0 +1,14 @@
+user
+
+username-user@gmail.com
+password-12345678
+
+username-subaharyk@gmail.com
+password-123456789
+
+
+
+
+Pharmacy
+username-Pharmacy@gmail.com
+password-12345678
